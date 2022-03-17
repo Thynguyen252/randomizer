@@ -1,53 +1,43 @@
-// capitals in the world
+// randomize film photography
 
-let capitals = [
-  {name: "Berlin", color: "red"},
-  {name: "Paris", color: "blue"},
-  {name: "Tokyo", color: "pink"},
-  {name: "London", color: "green"},
-  {name: "Rome", color: "brown"},
-  {name: "Keiv", color: "purple"},
-  {name: "Vienna", color: "gray"},
-];
- let randomIndex;
+let film = [];
+let numFilm = 9;
+
+function preload(){
+  let film1 = loadImage('images/sunset-01.jpg');
+  let film2 = loadImage('images/sunset-02.jpg');
+  let film3 = loadImage('images/sunset-03.jpg');
+  let film4 = loadImage('images/sunset-04.jpg');
+  let film5 = loadImage('images/smoke-01.jpg');
+  let film6 = loadImage('images/smoke-02.jpg');
+  let film7 = loadImage('images/smoke-03.jpg');
+  let film8 = loadImage('images/smoke-04.jpg');
+  let film9 = loadImage('images/smoke-05.jpg');
+
+  film = [film1, film2, film3, film4, film5, film6, film7, film8, film9];
+
+}
+
 function setup() {
-  createCanvas(600, 600);
-  background(200);
+  createCanvas(600, 700);
+  noLoop();
 
-  // capitals[0] = "Berlin germany";
-  // console.log(capitals);
-
-  /*console.log("initial array is");
-  console.log(capitals);
-
-  capitals.pop();
-  console.log("array after pop");
-  console.log(capitals);
-
-  capitals.push("Hanoi");
-  console.log("array after push");
-  console.log(capitals);*/
-
-  // conslole.log(capitals[0].name);
-
-  // console.log(capitals[int(random(3))]);
-
-/*randomIndex = int(random(capitals.length));
-  console.log(capitals[randomIndex].name);
-  text(capitals[randomIndex].name, 200, 200);
-
-capitals.splice(randomIndex,1);
-console.log(capitals);*/
 
 
 }
 
 function draw() {
+  background(250);
+  let randoImg = random(film)
+  imageMode(CORNER);
+  image(film, 0, 0, width, film.height*width/film.width);
+  image(film, 0.5*width, 0.5*height, scale*width, scale*film.height*width/film.width);
 }
 
+
 function mousePressed(){
-  background(random(200, 255));
-  randomIndex = int(random(capitals.length));
-  text(capitals[randomIndex].name, 200, 200);
-  capitals.splice(randomIndex,1);
+  background(random(film));
+  randomIndex = int(random(film));
+  img(film[randomIndex].film, 0, 0);
+  film.splice(randomIndex);
 }
