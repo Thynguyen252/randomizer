@@ -5,3 +5,20 @@ html, body {
 canvas {
   display: block;
 }
+a {
+  color: black;
+  text-align: center;
+  font-family: helvetica;
+  font-weight: bold;
+  font-size: 40pt;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+p {
+  font-size: 60px;
+  margin-left: 40px;
+  margin-top: 640px;
+  color: white;
+  font-family: helvetica;
+}
