@@ -2,6 +2,7 @@
 
 let film = [];
 let numFilm = 5;
+let button;
 let button1;
 function preload(){
   let film1 = loadImage('images/portrait-01.jpg');
@@ -11,6 +12,12 @@ function preload(){
   let film5 = loadImage('images/portrait-05.jpg');
 
   film = [film1, film2, film3, film4, film5];
+
+let link = createA('index.html','Back');
+link.position(0, 760);
+link.style('font-size', '17px');
+link.style('color', '#232323');
+link.style('font', helvetica);
 
 }
 
@@ -25,8 +32,12 @@ function setup() {
   createCanvas(600, 700);
 
   button = createButton('More');
-  button.position(550, 750);
+  button.position(500, 750);
   button.mousePressed(randomPicture);
+
+  button1 = createButton('“It’s one thing to make a picture of what a person looks like, it’s another thing to make a portrait of who they are." - Paul Caponigro');
+  button1.position(0, 750);
+  button1.size(300, 120);
 
 }
 
@@ -36,8 +47,6 @@ function draw() {
   let randoImg = random(film)
   imageMode(CORNER);
 
-  image(film, 0, 0);//, width, film.height*width/film.width);
-  //image(film, 0, 0); //0.5*width, 0.5*height, scale*width, scale*film.height*width/film.width);
-
+  image(film, 0, 0);
 
 }

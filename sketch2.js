@@ -13,6 +13,12 @@ function preload(){
 
   film = [film1, film2, film3, film4, film5];
 
+  let link = createA('index.html','Back');
+  link.position(0, 760);
+  link.style('font-size', '17px');
+  link.style('color', '#232323');
+  link.style('font', helvetica);
+
 }
 
 function randomPicture(){
@@ -26,9 +32,12 @@ function setup() {
   createCanvas(600, 700);
 
   button = createButton('More');
-  button.position(550, 750);
+  button.position(500, 750);
   button.mousePressed(randomPicture);
 
+  button1 = createButton('“If I am looking for a story at all, it is in my relationship to the subject — the story that tells me, rather than that I tell” - Bruce Davidson');
+  button1.position(0, 750);
+  button1.size(300, 120);
 }
 
 function draw() {
